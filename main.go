@@ -9,8 +9,8 @@ import(
 	"os"
 
 	"github.com/gorilla/mux"
-	"github.com/themarkfullton/transformation-api-read-only/helper"
-	"github.com/themarkfullton/transformation-api-read-only/models"
+	"github.com/themarkfullton/transformation-api-v2/helper"
+	"github.com/themarkfullton/transformation-api-v2/models"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -19,7 +19,7 @@ import(
 func main(){
 	r := mux.NewRouter()
 
-	r.Handle("/", http.FileServer())
+	r.Handle("/", http.FileServer(http.Dir("./static")))
 
 	port := os.Getenv("PORT")
 
