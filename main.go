@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/themarkfullton/transformation-api-v2/helper"
 	"github.com/themarkfullton/transformation-api-v2/models"
+	"go.mongodb.org/mongo-driver/mongo"
 	"log"
 	"net/http"
 
@@ -56,21 +57,53 @@ func getAllResources(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
 
 	j := r.URL.String()
+	var resources []models.Resource
+	var collection *mongo.Collection
 
 	switch j {
 	case "/api/fashion":
 		fmt.Println("Fashion")
+		collection = helper.ConnectDB("fashion")
 	case "/api/health":
 		fmt.Println("health")
+		collection = helper.ConnectDB("health")
 	case "/api/history":
 		fmt.Println("history")
+		collection = helper.ConnectDB("history")
 	case "/api/identity":
 		fmt.Println("identity")
+		collection = helper.ConnectDB("identity")
 	case "/api/travel":
 		fmt.Println("travel")
+		collection = helper.ConnectDB("travel")
 	default:
 		fmt.Println("How on earth did it get here?")
 	}
+
+	cursor, err := collection.Find(context.TODO(), bson.M{})
+
+	if err != nil {
+		helper.GetError(err, w)
+		return
+	}
+
+	defer cursor.Close(context.TODO())
+
+	for cursor.Next(context.TODO()) {
+		var resource models.Resource
+		err := cursor.Decode(&resource)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		resources = append(resources, resource)
+	}
+
+	if err := cursor.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	json.NewEncoder(w).Encode(resources)
 }
 
 // ==============================/ NEWS / ======================>
