@@ -1,19 +1,16 @@
 package main
 
-import(
+import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"log"
-	"net/http"
-	"os"
-
 	"github.com/gorilla/mux"
 	"github.com/themarkfullton/transformation-api-v2/helper"
 	"github.com/themarkfullton/transformation-api-v2/models"
+	"log"
+	"net/http"
 
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 // ==============================/ CLINICS / ======================>
@@ -112,11 +109,7 @@ func main(){
 	r.HandleFunc("/api/travel", getAllResources).Methods("GET")
 	r.HandleFunc("/api/news", getAllNews).Methods("GET")
 
+	println("Hello world!")
 
-	port := os.Getenv("PORT")
-
-	if err := http.ListenAndServe(":"+ port, r); err != nil {
-
-		log.Fatal(err)
-	}
+	log.Fatal(http.ListenAndServe(":8080", r))
 }
