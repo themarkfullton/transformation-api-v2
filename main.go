@@ -55,7 +55,22 @@ func getAllResources(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json")
 
-	fmt.Printf("%v", r)
+	j := r.URL.String()
+
+	switch j {
+	case "/api/fashion":
+		fmt.Println("Fashion")
+	case "/api/health":
+		fmt.Println("health")
+	case "/api/history":
+		fmt.Println("history")
+	case "/api/identity":
+		fmt.Println("identity")
+	case "/api/travel":
+		fmt.Println("travel")
+	default:
+		fmt.Println("How on earth did it get here?")
+	}
 }
 
 // ==============================/ NEWS / ======================>
