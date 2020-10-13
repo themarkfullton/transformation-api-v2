@@ -30,8 +30,9 @@ type Resource struct {
 
 // Announcement : Used to display information on the splash page
 type Announcement struct {
-	ID       primitive.ObjectID `bson:"_id,omitempty" json:"id,omitempty"`
-	Title    string             `bson:"title,omitempty" json:"title,omitempty"`
-	Author  string             `bson:"author,omitempty" json:"author,omitempty"`
-	Content string             `bson:"content,omitempty" json:"content,omitempty"`
+	ID			primitive.ObjectID `bson:"_id,omitempty" json:"id,omitempty"`
+	Title    	string             `bson:"title,omitempty" json:"title,omitempty"`
+	Author  	string             `bson:"author,omitempty" json:"author,omitempty"`
+	Content 	string             `bson:"content,omitempty" json:"content,omitempty"`
+	DateAdded	string				`bson:"dateAdded,omitempty" json:"dateAdded,omitempty"`
 }

@@ -73,8 +73,6 @@ type ErrorResponse struct {
 // GetError: Helper function; creates error
 func GetError(err error, w http.ResponseWriter) {
 
-	log.Fatal(err.Error())
-
 	var response = ErrorResponse{
 		ErrorMessage: err.Error(),
 		StatusCode: http.StatusInternalServerError,
@@ -84,4 +82,6 @@ func GetError(err error, w http.ResponseWriter) {
 
 	w.WriteHeader(response.StatusCode)
 	w.Write(message)
+
+	log.Fatal(err.Error())
 }
