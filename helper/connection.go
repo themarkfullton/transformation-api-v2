@@ -38,7 +38,7 @@ func ConnectDB(s string) *mongo.Collection {
 	transform := client.Database(dbName)
 	clinicsCollection := transform.Collection("clinics")
 	fashionCollection := transform.Collection("fashion")
-	healthCollection := transform.Collection("health")
+	fitnessCollection := transform.Collection("fitness")
 	historyCollection := transform.Collection("history")
 	identityCollection := transform.Collection("identity")
 	travelCollection := transform.Collection("travel")
@@ -49,8 +49,8 @@ func ConnectDB(s string) *mongo.Collection {
 		return clinicsCollection
 	case "fashion":
 		return fashionCollection
-	case "health":
-		return healthCollection
+	case "fitness":
+		return fitnessCollection
 	case "history":
 		return historyCollection
 	case "identity":

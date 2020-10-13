@@ -64,9 +64,9 @@ func getAllResources(w http.ResponseWriter, r *http.Request){
 	case "/api/fashion":
 		fmt.Println("Fashion")
 		collection = helper.ConnectDB("fashion")
-	case "/api/health":
-		fmt.Println("health")
-		collection = helper.ConnectDB("health")
+	case "/api/fitness":
+		fmt.Println("fitness")
+		collection = helper.ConnectDB("fitness")
 	case "/api/history":
 		fmt.Println("history")
 		collection = helper.ConnectDB("history")
@@ -151,7 +151,7 @@ func main(){
 
 	r.HandleFunc("/api/clinics", getAllClinics).Methods("GET")
 	r.HandleFunc("/api/fashion", getAllResources).Methods("GET")
-	r.HandleFunc("/api/health", getAllResources).Methods("GET")
+	r.HandleFunc("/api/fitness", getAllResources).Methods("GET")
 	r.HandleFunc("/api/history", getAllResources).Methods("GET")
 	r.HandleFunc("/api/identity", getAllResources).Methods("GET")
 	r.HandleFunc("/api/travel", getAllResources).Methods("GET")
