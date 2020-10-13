@@ -32,6 +32,6 @@ type Resource struct {
 type Announcement struct {
 	ID       primitive.ObjectID `bson:"_id,omitempty" json:"id,omitempty"`
 	Title    string             `bson:"title,omitempty" json:"title,omitempty"`
-	Snippet  string             `bson:"snippet,omitempty" json:"snippet,omitempty"`
-	FullBody string             `bson:"fullBody,omitempty" json:"fullBody,omitempty"`
+	Author  string             `bson:"author,omitempty" json:"author,omitempty"`
+	Content string             `bson:"content,omitempty" json:"content,omitempty"`
 }
