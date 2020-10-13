@@ -36,6 +36,7 @@ func ConnectDB(s string) *mongo.Collection {
 	historyCollection := transform.Collection("history")
 	identityCollection := transform.Collection("identity")
 	travelCollection := transform.Collection("travel")
+	newsCollection := transform.Collection("news")
 
 	switch s {
 	case "clinics":
@@ -50,9 +51,11 @@ func ConnectDB(s string) *mongo.Collection {
 		return identityCollection
 	case "travel":
 		return travelCollection
+	case "news":
+		return newsCollection
 	}
 
-	return clinicsCollection
+	return newsCollection
 }
 
 // ErrorResponse: Struct for errors
