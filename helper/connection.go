@@ -41,6 +41,7 @@ func ConnectDB(s string) *mongo.Collection {
 	fitnessCollection := transform.Collection("fitness")
 	historyCollection := transform.Collection("history")
 	identityCollection := transform.Collection("identity")
+	jobsCollection := transform.Collection("jobs")
 	travelCollection := transform.Collection("travel")
 	newsCollection := transform.Collection("news")
 
@@ -55,6 +56,8 @@ func ConnectDB(s string) *mongo.Collection {
 		return historyCollection
 	case "identity":
 		return identityCollection
+	case "jobs":
+		return jobsCollection
 	case "travel":
 		return travelCollection
 	case "news":
