@@ -161,7 +161,8 @@ func main(){
 	r.HandleFunc("/api/travel", getAllResources).Methods("GET")
 	r.HandleFunc("/api/news", getAllNews).Methods("GET")
 
-	println("Hello world!")
+	println("Transformation API")
+	println("Transforming the World into a safer place for the transgender community!")
 
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
