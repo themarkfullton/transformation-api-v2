@@ -150,9 +150,7 @@ func getAllNews(w http.ResponseWriter, r *http.Request){
 // ==============================/ MAIN / ======================>
 func main(){
 	r := mux.NewRouter()
-
 	r.Handle("/", http.FileServer(http.Dir("./static")))
-
 	r.HandleFunc("/api/clinics", getAllClinics).Methods("GET")
 	r.HandleFunc("/api/fashion", getAllResources).Methods("GET")
 	r.HandleFunc("/api/fitness", getAllResources).Methods("GET")
@@ -166,7 +164,7 @@ func main(){
 	println("Transforming the World into a safer place for the transgender community!")
 
 	port := os.Getenv("PORT")
-	if err := http.ListenAndServe(":"+port, r); err != nil {
+	if err := http.ListenAndServe(":" + port, r); err != nil {
 		log.Fatal(err)
 	}
 }

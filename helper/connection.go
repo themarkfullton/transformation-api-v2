@@ -8,17 +8,17 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 // ConnectDB : Connects to mongoDB
 func ConnectDB(s string) *mongo.Collection {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	// USED FOR .ENV IN LOCAL
+	//err := godotenv.Load()
+	//if err != nil {
+	//	log.Fatal("Error loading .env file")
+	//}
 
 	dbUser := os.Getenv("USER")
 	dbPass := os.Getenv("PASS")
