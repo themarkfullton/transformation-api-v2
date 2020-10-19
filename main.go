@@ -10,6 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"log"
 	"net/http"
+	"os"
 
 	"go.mongodb.org/mongo-driver/bson"
 )
@@ -164,5 +165,8 @@ func main(){
 	println("Transformation API")
 	println("Transforming the World into a safer place for the transgender community!")
 
-	log.Fatal(http.ListenAndServe(":8080", r))
+	port := os.Getenv("PORT")
+	if err := http.ListenAndServe(":"+port, r); err != nil {
+		log.Fatal(err)
+	}
 }
