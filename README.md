@@ -85,3 +85,9 @@ Golang
 The database is still being updated with resources (especially clinics). Also, the API will be receiving authentication and CRUD functionality.
 
 Finally, I hope to add a "Transgender Community" collection filled with meeting groups from around the states.
+
+## Screenshots
+
+<img src="screenshot1.PNG">
+<img src="screenshot2.PNG">
+<img src="screenshot3.PNG">
