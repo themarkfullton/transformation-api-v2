@@ -2,10 +2,7 @@
 ## BACK END (Golang)
 ### [Front End](https://github.com/themarkfullton/transformation-app-v2) (React)
 
-**LINK TO LIVE** https://transformation-app-v2.herokuapp.com/
-
-**LINK TO OLD** https://github.com/themarkfullton/transformation-api-read-only
-
+**Link to live currently deactivated; considering move to GQL**
 **STILL UNDER CONSTRUCTION**
 
 Full Stack. Transforming the world into a safer place for the transgender community! App/API containing a variety of transgender resources (from trans-friendly clinics to information about how to change one's given name)!
@@ -80,11 +77,15 @@ link (returns url of the website as string)
 
 Golang
 
+## Motivation
+
+Finding up-to-date resources as a transgender individual is tough, but essential: It can sometimes mean the difference between life and death. This app was created by transgender individuals for the purpose of making this information readily availiable *to* transgender individuals; to transform the world into a better place.
+
 ## Future Plans
 
-The database is still being updated with resources (especially clinics). Also, the API will be receiving authentication and CRUD functionality.
+The Transformation Team is currently collecting up-to-date information on trans-friendly clinics and working to connect with transgender content creators to provide helpful resources.
 
-Finally, I hope to add a "Transgender Community" collection filled with meeting groups from around the states.
+We are also considering a move to GQL and are experimenting with different API structures.
 
 ## Screenshots
 
